@@ -1,0 +1,418 @@
+/* font-family: 'Kumbh Sans', sans-serif; */
+
+:root {
+    --orange: hsl(26, 100%, 55%);
+    --pale-orange: hsl(23, 97%, 73%);
+    --white: hsl(0, 0%, 100%);
+    --lightbox-background: hsl(0, 0%, 0%, 0.75);
+    --p-and-nav-color: hsl(0, 0%, 53%);
+    --h-and-nav-color: hsl(220, 13%, 13%);
+    --light-pink: hsl(223, 64%, 98%);
+}
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+}
+
+/* layout */
+
+.wrapper-main {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.product-image-container {
+    user-select: none;
+}
+
+.main-image {
+    position: relative;
+    height: 35vh;
+}
+
+#current-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.thumbnail-container,
+.lightbox {
+    display: none;
+}
+
+.btn-container {
+    background-color: var(--white);
+    width: 8vw;
+    min-width: 35px;
+    max-width: 50px;
+    height: 8vw;
+    min-height: 35px;
+    max-height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0px 0px 24px -13px rgba(0,0,0,1);
+    cursor: pointer;
+}
+
+.btn-container:hover img {
+    filter: brightness(0) saturate(100%) invert(70%) sepia(12%) saturate(5437%) hue-rotate(357deg) brightness(98%) contrast(109%);
+}
+
+.btn-container img {
+    width: 30%;
+}
+
+
+.prev {
+    position: absolute;
+    top: 45%;
+    left: 1em;
+}
+
+.next {
+    position: absolute;
+    top: 45%;
+    right: 1em;
+}
+
+
+/* product description layout */
+
+
+.product-description-container {
+    padding: 1.5em;
+}
+
+.price-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin: 1.5em 0;
+}
+
+.discount {
+    background-color: hsl(23, 100%, 93%);
+    width: fit-content;
+    padding: 0.5em 0.7em 0 0.7em;
+    border-radius: 10px;
+}
+
+.how-many {
+    background-color: var(--light-pink);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 1.5em;
+    border-radius: 10px;
+}
+
+.add-minus {
+    width: 10%;
+    min-width: 20px;
+    max-width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.add-minus img {
+    width: 50%;
+}
+
+#item-count {
+    background-color: var(--light-pink);
+    width: 50%;
+    border: none;
+    pointer-events: none; 
+
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 700;
+    font-size: clamp(0.8rem, 5vw, 1rem);
+    color: var(--h-and-nav-color);
+    text-align: center;
+}
+
+#item-count:focus {
+    outline: none;
+}
+
+#item-count::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+#add-cart-btn {
+    background-color: var(--orange);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 0.5em 0;
+    margin-top: 1em;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 24px -13px rgba(0,0,0,1);
+    cursor: pointer;
+    user-select: none;
+}
+
+#add-cart-btn:hover {
+    background-color: var(--pale-orange);
+}
+
+#add-cart-btn img {
+    width: 20px;
+    filter: brightness(1000%);
+}
+
+
+                                                        /* typo */
+
+.product-description-container h4 {
+    text-transform: uppercase;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 700;
+    font-size: clamp(0.5rem, 2vw, 0.9rem);
+    letter-spacing: 0.1em;
+    color: var(--orange);
+
+    margin-bottom: 1em;
+}
+
+.product-description-container h1 {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 700;
+    font-size: clamp(0.8rem, 8vw, 2.5rem);
+    color: var(--h-and-nav-color);
+
+    margin-bottom: 0.5em;
+}
+
+.product-description-container p {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.8rem, 5vw, 1rem);
+    color: var(--p-and-nav-color);
+    line-height: 1.5em;
+    
+    margin-bottom: 0.5em;
+}
+
+.price-container h3 {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 700;
+    font-size: clamp(0.8rem, 8vw, 2.1rem);
+    color: var(--h-and-nav-color);
+}
+
+.price-container p {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.8rem, 5vw, 1rem);
+    color: var(--p-and-nav-color);
+
+    margin-left: auto;
+}
+
+.discount p {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 700;
+    font-size: clamp(0.8rem, 5vw, 1rem);
+    color: var(--orange);
+}
+
+#add-cart-btn p {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 700;
+    font-size: clamp(0.8rem, 5vw, 1rem);
+    color: var(--white);
+
+    margin-top: 0.7em;
+}
+
+@media (min-width: 808px) {
+
+    main {
+        height: 90vh;
+        display: flex;
+        align-items: center;
+    }
+
+    .wrapper-main {
+        max-width: 1000px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5em;
+        margin: 0 auto;   
+    }
+
+    .main-image {
+        height: auto;
+    }
+
+    #current-image {
+        border-radius: 10px;
+    }
+
+    .btn-container {
+        display: none;
+    }
+
+    .thumbnail-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1.5em;
+    }
+
+    .thumbnail {
+        width: 20%;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .thumbnail:hover {
+        filter: blur(0.6px);
+    }
+
+    .thumbnail.image-active,
+    .thumbnail.lightbox-image-active {
+        border: 3px solid var(--orange);
+        filter: blur(0.6px);
+    }
+
+    .thumbnail img {
+        width: 100%;
+        min-height: 100%;
+
+        display: block;
+    }
+
+    .product-description-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #original-price {
+        position: absolute;
+        top: 2.5em;
+    }
+
+    .add-cart-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1.5em 0;
+    }
+
+    .how-many {
+        width: 40%;
+        gap: 1em;
+        padding: 1em 1.5em;
+    }
+
+    .add-minus {
+        width: 30%;
+    }
+
+    #item-count {
+        width: 50%;
+    }
+
+    #add-cart-btn {
+        width: 55%;
+        margin-top: 0;
+    }
+
+    /* lightbox */
+
+    .lightbox {
+        display: none;
+        width: 30%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 99999999;
+    }
+
+    #lightbox-current-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+    }
+
+    #lightbox-black-cover {
+        background: var(--lightbox-background);
+        display: none;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 99;
+    }
+
+    .lightbox-btn-container {
+        background-color: var(--white);
+        width: 3vw;
+        height: 3vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    
+    .lightbox-btn-container img {
+        width: 30%;
+    }
+
+    .lightbox-btn-container:hover img {
+        filter: brightness(0) saturate(100%) invert(70%) sepia(12%) saturate(5437%) hue-rotate(357deg) brightness(98%) contrast(109%);
+    }
+    
+    
+    .lightbox-prev {
+        position: absolute;
+        top: 45%;
+        left: -1.5em;
+    }
+    
+    .lightbox-next {
+        position: absolute;
+        top: 45%;
+        right: -1.5em;
+    }
+
+    .lightbox-thumbnail-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1.5em;
+    }
+
+    .wrapper-main.lightbox-show .lightbox,
+    .wrapper-main.lightbox-show #lightbox-black-cover {
+        display: block;
+    }
+
+}
