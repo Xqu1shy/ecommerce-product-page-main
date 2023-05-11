@@ -49,21 +49,21 @@ thumbContainer.addEventListener('click', (e) =>{ //thumbnail to mainPic
     } else if(e.target.src.indexOf('1') !== -1){
         removeActive()
         e.target.parentNode.classList.add('image-active')
-        currentImage.src=`${picArry[0]}`
+        currentImage.src= picArry[0]
     } else if(e.target.src.indexOf('2') !== -1){
         removeActive()
         e.target.parentNode.classList.add('image-active')
-        currentImage.src=`${picArry[1]}`
+        currentImage.src= picArry[1]
     } else if(e.target.src.indexOf('3') !== -1){
         removeActive()
         e.target.parentNode.classList.add('image-active')
-        currentImage.src=`${picArry[2]}`
+        currentImage.src= picArry[2]
     } else if(e.target.src.indexOf('4') !== -1){
         removeActive()
         e.target.parentNode.classList.add('image-active')
-        currentImage.src=`${picArry[3]}`
+        currentImage.src= picArry[3]
     }
-})
+});
 
 // lightbox preview
 
