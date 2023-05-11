@@ -3,7 +3,7 @@
 //  prev/next function
 
 let picArry = ['./images/image-product-1.jpg', './images/image-product-2.jpg', './images/image-product-3.jpg', './images/image-product-4.jpg']
-let currentImage = document.getElementById('current-image')
+const currentImage = document.getElementById('current-image')
 const prevbtn = document.getElementById('prevbtn')
 const nextbtn = document.getElementById('nextbtn')
 let i = 0; //current picArry index //nasa labas dapat toh
@@ -46,19 +46,19 @@ function removeActive(){
 thumbContainer.addEventListener('click', (e) =>{ //thumbnail to mainPic
     if(e.target.classList.contains('thumbnail-container')){
         return false;
-    } else if(e.target.src.indexOf('1') !== -1){
+    } else if(e.target.getAttribute('src') === "./images/image-product-1-thumbnail.jpg"){
         removeActive()
         e.target.parentNode.classList.add('image-active')
         currentImage.src= picArry[0]
-    } else if(e.target.src.indexOf('2') !== -1){
+    } else if(e.target.getAttribute('src') === "./images/image-product-2-thumbnail.jpg"){
         removeActive()
         e.target.parentNode.classList.add('image-active')
         currentImage.src= picArry[1]
-    } else if(e.target.src.indexOf('3') !== -1){
+    } else if(e.target.getAttribute('src') === "./images/image-product-3-thumbnail.jpg"){
         removeActive()
         e.target.parentNode.classList.add('image-active')
         currentImage.src= picArry[2]
-    } else if(e.target.src.indexOf('4') !== -1){
+    } else if(e.target.getAttribute('src') === "./images/image-product-4-thumbnail.jpg"){
         removeActive()
         e.target.parentNode.classList.add('image-active')
         currentImage.src= picArry[3]
