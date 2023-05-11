@@ -72,11 +72,11 @@ const lightboxPrevbtn = document.getElementById('lightbox-prevbtn')
 const lightboxNextbtn = document.getElementById('lightbox-nextbtn')
 
 function updateIndex() {                                    //change i depending on the current image
-    if(currentImage.src.indexOf('1') !== -1){                  // for the next and prev
+    if(currentImage.getAttribute('src') === "./images/image-product-1.jpg"){                  // for the next and prev
         i = 0
-    } else if(currentImage.src.indexOf('2') !== -1) {
+    } else if(currentImage.getAttribute('src') === "./images/image-product-2.jpg") {
         i = 1
-    } else if(currentImage.src.indexOf('3') !== -1) {
+    } else if(currentImage.getAttribute('src') === "./images/image-product-3.jpg") {
         i = 2
     } else {
         i = 3
@@ -164,19 +164,19 @@ function removeActiveLightbox(){
 lightboxtThumbContainer.addEventListener('click', (e) =>{
     if(e.target.classList.contains('lightbox-thumbnail-container')){
         return false;
-    } else if(e.target.src.indexOf('1') !== -1){ //check the e.target innertext/innerHTML if it has the '(word)'
+    } else if(e.target.getAttribute('src') === "./images/image-product-1-thumbnail.jpg"){
         removeActiveLightbox()
         e.target.parentNode.classList.add('lightbox-image-active')
         lightboxCurrentImage.src=`${picArry[0]}`
-    } else if(e.target.src.indexOf('2') !== -1){
+    } else if(e.target.getAttribute('src') === "./images/image-product-2-thumbnail.jpg"){
         removeActiveLightbox()
         e.target.parentNode.classList.add('lightbox-image-active')
         lightboxCurrentImage.src=`${picArry[1]}`
-    } else if(e.target.src.indexOf('3') !== -1){
+    } else if(e.target.getAttribute('src') === "./images/image-product-3-thumbnail.jpg"){
         removeActiveLightbox()
         e.target.parentNode.classList.add('lightbox-image-active')
         lightboxCurrentImage.src=`${picArry[2]}`
-    } else if(e.target.src.indexOf('4') !== -1){
+    } else if(e.target.getAttribute('src') === "./images/image-product-4-thumbnail.jpg"){
         removeActiveLightbox()
         e.target.parentNode.classList.add('lightbox-image-active')
         lightboxCurrentImage.src=`${picArry[3]}`
