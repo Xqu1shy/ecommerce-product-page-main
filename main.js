@@ -71,7 +71,7 @@ let lightboxCurrentImage = document.getElementById('lightbox-current-image')
 const lightboxPrevbtn = document.getElementById('lightbox-prevbtn')
 const lightboxNextbtn = document.getElementById('lightbox-nextbtn')
 
-function updateIndex() {                                    //change i depending on the current image
+function updateIndex(image) {                                    //change i depending on the current image
     if(currentImage.getAttribute('src') === "./images/image-product-1.jpg"){                  // for the next and prev
         i = 0
     } else if(currentImage.getAttribute('src') === "./images/image-product-2.jpg") {
@@ -168,18 +168,25 @@ lightboxtThumbContainer.addEventListener('click', (e) =>{
         removeActiveLightbox()
         e.target.parentNode.classList.add('lightbox-image-active')
         lightboxCurrentImage.src=`${picArry[0]}`
+        i = 0
     } else if(e.target.getAttribute('src') === "./images/image-product-2-thumbnail.jpg"){
         removeActiveLightbox()
         e.target.parentNode.classList.add('lightbox-image-active')
         lightboxCurrentImage.src=`${picArry[1]}`
+        updateIndex(e.target)
+        i = 1
     } else if(e.target.getAttribute('src') === "./images/image-product-3-thumbnail.jpg"){
         removeActiveLightbox()
         e.target.parentNode.classList.add('lightbox-image-active')
         lightboxCurrentImage.src=`${picArry[2]}`
+        updateIndex(e.target)
+        i = 2
     } else if(e.target.getAttribute('src') === "./images/image-product-4-thumbnail.jpg"){
         removeActiveLightbox()
         e.target.parentNode.classList.add('lightbox-image-active')
         lightboxCurrentImage.src=`${picArry[3]}`
+        updateIndex(e.target)
+        i = 3
     }
 })
 
